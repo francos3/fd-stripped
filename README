@@ -1,3 +1,5 @@
+Note: This is a fork of https://gogs.cs.uni-saarland.de/fai_group/FD-Stripped .  Thanks to the original FD team and to the Saarland group for this contribution to the comunitiy!
+
 This document contains information on how to compile and run FD, and
 also some issues concerning the implementation of heuristics that
 occurred in previous years.
