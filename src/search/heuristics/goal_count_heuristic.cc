@@ -19,10 +19,15 @@ void GoalCountHeuristic::initialize()
     cout << "Initializing goal counting heuristic..." << endl;
 }
 
-int GoalCountHeuristic::compute_heuristic(const State &/*state*/)
+int GoalCountHeuristic::compute_heuristic(const State &state)
 {
-    // TODO implementation
-    return -1;
+    int unsatisfied_goal_count = 0;
+    for (size_t i = 0; i < g_goal.size(); ++i) {
+        int var = g_goal[i].first, value = g_goal[i].second;
+        if (state[var] != value)
+            ++unsatisfied_goal_count;
+    }
+    return unsatisfied_goal_count;
 }
 
 static Heuristic *_parse(OptionParser &parser)
